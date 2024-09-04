@@ -1,0 +1,92 @@
+#newInfoArea {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #2497c1;
+    font-size: 12px;
+    text-align: center;
+    background-color: black;
+}
+
+#infoParent {
+    width: 100%;
+    height: 100%;
+}
+
+#infoHeader {
+    width: 100%;
+    height: 20%;
+    background: url(../img/be_vegged.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
+}
+
+#infoStart {
+    height: 10%;
+}
+
+#start {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#start div {
+    width: 120px;
+    padding: 6px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #00c000;
+    border: 2px solid #333;
+    border-radius: 6px;
+}
+
+#infoHints {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#hints span {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 0px;
+    display: block;
+}
+
+/* hints */
+#hintId {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+#infoLevelDat {
+    height: 10%;
+}
+
+#infoStats {
+    height: 10%;
+}
+
+#infoTime {
+    height: 10%;
+}
+
+#infoFooter {
+    width: 100%;
+    height: 30%;
+    background: url(../img/veggies.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
+}
