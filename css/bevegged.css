@@ -1,3 +1,7 @@
+
+
+
+
 body {
     margin: 0px;
     padding: 0px;
@@ -6,64 +10,149 @@ body {
     font-family: Arial;
 }
 
-.inner {
-    border: 1px solid #767676;
+#be_vegged {
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #2e2222;
 }
 
-#gamescreen {
-    width: 462px;
-    height: 256px;
-    margin-top: 24px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#footerImg {
+#newInfoArea {
     width: 200px;
-    height: 200px;
-    background: url(../img/veggies.png) no-repeat 0px 0px;
-    background-size: 100% 100%;
-}
-
-#field {
-    margin: 0px;
-    border: 0px;
-    border: 3px solid #2e2222;
-    border-style: ridge;
-    background: #fff;
-    position: relative;
+    height: 100%;
+    position: absolute;
     top: 0px;
     left: 0px;
-    width: 512px;
-    height: 512px;
-    overflow: hidden;
-    margin-top: -4px;
-    margin-bottom: -4px;
-    background-color: black;
-}
-
-#infoArea {
-    margin: 0px;
-    background: #fff;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: #2497c1;
     font-size: 12px;
     text-align: center;
-    width: 200px;
-    height: 512px;
-    padding: 0px;
-    overflow: hidden;
-    vertical-align: top;
     background-color: black;
 }
 
-#controller td {
-    padding-top: 3px;
-    padding-bottom: 3px;
+#gameArea {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
-#controller td.noPadding {
-    padding-top: 0px;
-    padding-bottom: 0px;
+#field {
+    border: 1px solid #2e2222;
+    background-color: black;
+}
+
+#field .inner {
+    border-right: 1px solid #2e2222;;
+    border-bottom: 1px solid #2e2222;;
+}
+
+#field div {
+    cursor: pointer;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#infoParent {
+    width: 100%;
+    height: 100%;
+}
+
+#infoHeader {
+    width: 100%;
+    height: 20%;
+    background: url(../img/be_vegged.png) no-repeat 0px 0px;
+    background-size: 80% auto;
+    background-position-y: 50%;
+    background-position-x: 50%;
+}
+
+#infoStart {
+    height: 10%;
+}
+
+#start {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#start div {
+    width: 120px;
+    padding: 6px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #00c000;
+    border: 2px solid #333;
+    border-radius: 6px;
+}
+
+#infoHints {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#hints span {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 0px;
+    display: block;
+}
+
+/* hints */
+#hintId {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.datContainer {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: justify;
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+#infoLevelDat {
+    height: 10%;
+}
+
+#levelNow,
+#pointsNow {
+    display: block;
+    float: right;
+}
+
+#infoStats {
+    height: 10%;
+}
+
+#tiles,
+#ntiles {
+    display: block;
+    float: right;
+}
+
+#infoTime {
+    height: 10%;
 }
 
 #timebar {
@@ -76,30 +165,6 @@ body {
     width: 200px;
 }
 
-#wrapgame {
-    position: relative;
-}
-
-/* level */
-#levelId {
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-    font-size: 18px;
-    padding-top: 20px;
-}
-
-/* points */
-#pointsId {
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-:focus {
-    outline: none;
-}
 
 #info {
     font-family: Arial;
@@ -110,44 +175,14 @@ body {
     height: 28px;
 }
 
-#stats {
+#infoFooter {
     width: 100%;
-    height: 56px;
-    padding-top: 20px;
+    height: 30%;
+    background: url(../img/veggies.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
 }
 
-#stats table {
-    font-family: Arial;
-    font-size: 11px;
-    font-weight: bold;
-    width: 100%;
-}
 
-#stats table .tdLt {
-    text-align: left;
-    width: 50%;
-    font-size: 14px;
-}
-
-#stats table .tdRt {
-    text-align: right;
-    width: 50%;
-}
-
-.points {
-    color: #0f0;
-    font-size: 11px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.cursor {
-    background: url(../img/cursor2.gif);
-}
-
-#field DIV {
-    cursor: pointer;
-}
 
 .s0 {
     background-color: #444;
@@ -186,10 +221,3 @@ body {
     background: url(../img/asparagus.png);
 }
 
-.tile {
-    font-size: 12px;
-    color: #000;
-    font-weight: bold;
-    font-family: Arial;
-    text-align: center;
-}

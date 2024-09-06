@@ -6,94 +6,48 @@
         <meta name="revised" content="2012/05/06" />
         <meta name="description" content="Home of Web Developer Kearnan Kelly" />
         <link rel="stylesheet" type="text/css" href="css/bevegged.css" />
-        <link rel="stylesheet" type="text/css" href="css/newLayout.css" />
         <script type="text/javascript" src="js/libs/mootools14.js"></script>
         <script type="text/javascript" src="js/libs/mootools_m.js"></script>
         <script type="text/javascript" src="js/bevegged.js"></script>
     </head>
     <body style="background-color: #000">
-        <table id="be_vegged">
-            <tr>
-                <td id="newInfoArea">
-                    <div id="infoParent">
-                        <div id="infoHeader"></div>
-                        <div id="infoStart">
-                            <div id="start">
-                                <div>
-                                    <span>START</span>
-                                </div>
+        <div id="be_vegged">
+            <div id="newInfoArea">
+                <div id="infoParent">
+                    <div id="infoHeader"></div>
+                    <div id="infoStart">
+                        <div id="start">
+                            <div>
+                                <span>START</span>
                             </div>
                         </div>
-                        <div id="infoHints">
-                            <div id="hints">
-                                <span>Hints Remaining:</span>
-                                <div id="hintId"></div>
-                            </div>
-                        </div>
-                        <div id="infoLevelDat"></div>
-                        <div id="infoStats"></div>
-                        <div id="infoTime"></div>
-                        <div id="infoFooter"></div>
                     </div>
-                </td>
-                <td id="infoArea">
-                    <table id="controller">
-                        <tr>
-                            <td>
-                                <div id="levelId"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="pointsId"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="stats">
-                                    <table>
-                                        <tr>
-                                            <td class="tdLt"><span>Captured:</span></td>
-                                            <td class="tdRt"><span id="tiles"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tdLt"><span>Required:</span></td>
-                                            <td class="tdRt"><span id="ntiles"></span></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="info">Stress Bar</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="noPadding">
-                                <div id="timebar"><span style="display: none" id="t"></span></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px"></td>
-                        </tr>
-                        <tr>
-                            <td id="footerImg" class="noPadding"></td>
-                        </tr>
-                    </table>
-                </td>
-                <td id="gameArea" style="width: 512px; height: 512px">
-                    <table>
-                        <tr>
-                            <td>
-                                <div style="position: relative; width: 100%; height: 100%">
-                                    <div id="field"></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+                    <div id="infoHints">
+                        <div id="hints">
+                            <span>Hints Remaining:</span>
+                            <div id="hintId"></div>
+                        </div>
+                    </div>
+                    <div id="infoLevelDat" class="datContainer">
+                        <div id="levelId" class="centern"><span>Level:</span><span id="levelNow"></span></div>
+                        <div id="pointsId" class="centern"><span>Points:</span><span id="pointsNow"></span></div>
+                    </div>
+                    <div id="infoStats" class="datContainer">
+                        <div class="stat"><span>Captured:</span><span id="tiles"></span></div>
+                        <div class="stat"><span>Required:</span><span id="ntiles"></span></div>
+                    </div>
+                    <div id="infoTime">
+                        <div id="info">Stress Bar</div>
+                        <div id="timebar"><span style="display: none" id="t"></span></div>
+                    </div>
+                    <div id="infoFooter"></div>
+                </div>
+            </div>
+            <div id="gameArea" style="width: 512px; height: 512px">
+                <div style="position: relative; width: 100%; height: 100%">
+                    <div id="field"></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
