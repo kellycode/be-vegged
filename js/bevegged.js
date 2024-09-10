@@ -14,10 +14,10 @@ var vegger = new Class({
         tileheight: 64,
 
         fieldid: "field",
-        pointsid: "pointsNow",
+        pointsid: "pointsId",
         timeid: "t",
         timebar: "timebar",
-        levelid: "levelNow",
+        levelid: "levelId",
         hintid: "hintId",
         tileid: "tiles",
         reqtileid: "ntiles",
@@ -44,7 +44,7 @@ var vegger = new Class({
         periodical: false,
 
         gameover: "GAME OVER",
-        nohintsleft: '<span style="color:red;">Click Start To Begin</span>',
+        nohintsleft: '<span style="color:red;" class="startHintsText">Click Start To Begin</span>',
         nomoves: "No Moves left!",
 
         level: 0,
@@ -115,22 +115,18 @@ var vegger = new Class({
     initialize: function (options) {
         let viewportHeight = window.innerHeight;
         let heightPercentage = 0.8;
-        let gameHeightWidth = viewportHeight * heightPercentage;
-        let aThird = gameHeightWidth * 0.33;
-
-        let gameView = document.getElementById("be_vegged");
-        gameView.style.height = gameHeightWidth + "px";
-        gameView.style.width = aThird + gameHeightWidth + "px";
 
         let gameArea = document.getElementById("gameArea");
+        let gameHeightWidth = viewportHeight * heightPercentage;
         gameArea.style.width = gameArea.style.height = gameHeightWidth + "px";
 
         let gameField = document.getElementById("field");
         gameField.style.width = gameField.style.height = gameHeightWidth + "px";
 
+        let infoArea = document.getElementById("infoArea");
         let newInfoArea = document.getElementById("newInfoArea");
-        newInfoArea.style.height = gameHeightWidth + "px";
-        newInfoArea.style.width = aThird + "px";
+        newInfoArea.style.height = infoArea.style.height = gameHeightWidth + "px";
+        newInfoArea.style.width = infoArea.style.width = (gameHeightWidth * 0.33) + "px";
 
         let tileWidthHeight = gameHeightWidth / 8;
 
@@ -152,7 +148,7 @@ var vegger = new Class({
             }
         }.bind(this);
 
-        this.startgame();
+        this.clearGame();
     },
 
     startgame: function () {
@@ -209,7 +205,7 @@ var vegger = new Class({
                 this.field.set(posid, tileid);
                 this.tiles.set(
                     tileid,
-                    new Element("div", {
+                    new Element("DIV", {
                         id: tileid,
                         class: "outer",
                         styles: {
@@ -378,7 +374,7 @@ var vegger = new Class({
 
         if (!tileid) return false;
 
-        $(tileid).setProperty("class", tile + " outer");
+        $(tileid).setProperty("class", tile);
         $(tileid).setStyle("display", "block");
 
         return true;
@@ -1030,13 +1026,13 @@ var vegger = new Class({
     },
 
     updatePointsDisplay: function () {
-        $(this.options.pointsid).innerHTML = this.options.points;
+        $(this.options.pointsid).innerHTML = "Points: " + this.options.points;
         $(this.options.tileid).innerHTML = this.options.tilecount;
         $(this.options.reqtileid).innerHTML = this.options.levels[this.options.level].reqtile;
     },
 
     updateLevelDisplay: function () {
-        $(this.options.levelid).innerHTML = (this.options.level + 1);
+        $(this.options.levelid).innerHTML = "Level: " + (this.options.level + 1);
     },
 
     updateTimeDisplay: function () {

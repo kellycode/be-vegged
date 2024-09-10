@@ -1,16 +1,16 @@
 
-body {
+#infoArea {
     margin: 0px;
+    background: #fff;
+    color: #2497c1;
+    font-size: 12px;
+    text-align: center;
+    width: 200px;
+    height: 512px;
     padding: 0px;
-    border: 0px;
-    background: #000;
-    font-family: Arial;
-}
-
-#be_vegged {
-    position: absolute;
     overflow: hidden;
-    border: 1px solid #2e2222;
+    vertical-align: top;
+    background-color: black;
 }
 
 #newInfoArea {
@@ -30,24 +30,7 @@ body {
     background-color: black;
 }
 
-#gameArea {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
 
-#field {
-    border: 1px solid #2e2222;
-    background-color: black;
-}
-
-#field .inner {
-    border: 1px solid #767676;
-}
-
-#field div {
-    cursor: pointer;
-}
 
 .center {
     position: absolute;
@@ -125,6 +108,36 @@ body {
     box-sizing: border-box;
 }
 
+/* level */
+#levelId {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+/* points */
+#pointsId {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+:focus {
+    outline: none;
+}
+
+#info {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 28px;
+}
+
 #infoLevelDat {
     height: 10%;
 }
@@ -139,10 +152,8 @@ body {
     height: 10%;
 }
 
-#tiles,
-#ntiles {
-    display: block;
-    float: right;
+#infoStats .stat {
+    text-align: center;
 }
 
 #infoTime {
@@ -177,41 +188,4 @@ body {
 }
 
 
-
-.s0 {
-    background-color: #444;
-}
-.s1 {
-    background: url(../img/carrots.png);
-}
-.s2 {
-    background: url(../img/watermelons.png);
-}
-.s3 {
-    background: url(../img/eggplant.png);
-}
-.s4 {
-    background: url(../img/strawberry.png);
-}
-.s5 {
-    background: url(../img/bananas.png);
-}
-.s6 {
-    background: url(../img/tomato.png);
-}
-.s7 {
-    background: url(../img/apple.png);
-}
-.s8 {
-    background: url(../img/mushroom.png);
-}
-.s9 {
-    background: url(../img/pepper.png);
-}
-.s10 {
-    background: url(../img/beet.png);
-}
-.s11 {
-    background: url(../img/asparagus.png);
-}
 

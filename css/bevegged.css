@@ -1,7 +1,3 @@
-
-
-
-
 body {
     margin: 0px;
     padding: 0px;
@@ -10,179 +6,54 @@ body {
     font-family: Arial;
 }
 
-#be_vegged {
-    position: absolute;
-    overflow: hidden;
-    border: 1px solid #2e2222;
+.inner {
+    border: 1px solid #767676;
 }
 
-#newInfoArea {
+#gamescreen {
+    width: 462px;
+    height: 256px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footerImg {
     width: 200px;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #2497c1;
-    font-size: 12px;
-    text-align: center;
-    background-color: black;
-}
-
-#gameArea {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-#field {
-    border: 1px solid #2e2222;
-    background-color: black;
-}
-
-#field .inner {
-    border-right: 1px solid #2e2222;;
-    border-bottom: 1px solid #2e2222;;
-}
-
-#field div {
-    cursor: pointer;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-#infoParent {
-    width: 100%;
-    height: 100%;
-}
-
-#infoHeader {
-    width: 100%;
-    height: 20%;
-    background: url(../img/be_vegged.png) no-repeat 0px 0px;
-    background-size: 80% auto;
-    background-position-y: 50%;
-    background-position-x: 50%;
-}
-
-#infoStart {
-    height: 10%;
-}
-
-#start {
-    width: 100%;
-    height: 100%;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#start div {
-    width: 120px;
-    padding: 6px;
-    margin: auto;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-    background-color: #00c000;
-    border: 2px solid #333;
-    border-radius: 6px;
-}
-
-#infoHints {
-    height: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#hints span {
-    width: 100%;
-    font-size: 20px;
-    padding: 12px 0px;
-    display: block;
-}
-
-/* hints */
-#hintId {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-}
-
-.datContainer {
-    font-weight: bold;
-    font-size: 18px;
-    text-align: justify;
-    padding: 30px 40px;
-    box-sizing: border-box;
-}
-
-#infoLevelDat {
-    height: 10%;
-}
-
-#levelNow,
-#pointsNow {
-    display: block;
-    float: right;
-}
-
-#infoStats {
-    height: 10%;
-}
-
-#tiles,
-#ntiles {
-    display: block;
-    float: right;
-}
-
-#infoTime {
-    height: 10%;
-}
-
-#timebar {
-    margin: 0px;
-    padding: 0px;
-    border: 3px solid #333;
-    margin: auto;
-    background: url(../img/bar_green.gif) no-repeat 0px 0px;
-    height: 20px;
-    width: 200px;
-}
-
-
-#info {
-    font-family: Arial;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    height: 28px;
-}
-
-#infoFooter {
-    width: 100%;
-    height: 30%;
+    height: 200px;
     background: url(../img/veggies.png) no-repeat 0px 0px;
     background-size: 100% 100%;
 }
 
+#field {
+    margin: 0px;
+    border: 0px;
+    border: 3px solid #2e2222;
+    border-style: ridge;
+    background: #fff;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 512px;
+    height: 512px;
+    overflow: hidden;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    background-color: black;
+}
 
+#wrapgame {
+    position: relative;
+}
+
+
+.cursor {
+    background: url(../img/cursor2.gif);
+}
+
+#field DIV {
+    cursor: pointer;
+}
 
 .s0 {
     background-color: #444;
@@ -221,3 +92,10 @@ body {
     background: url(../img/asparagus.png);
 }
 
+.tile {
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+    font-family: Arial;
+    text-align: center;
+}

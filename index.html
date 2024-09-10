@@ -6,48 +6,61 @@
         <meta name="revised" content="2012/05/06" />
         <meta name="description" content="Home of Web Developer Kearnan Kelly" />
         <link rel="stylesheet" type="text/css" href="css/bevegged.css" />
+        <link rel="stylesheet" type="text/css" href="css/infoArea.css" />
         <script type="text/javascript" src="js/libs/mootools14.js"></script>
         <script type="text/javascript" src="js/libs/mootools_m.js"></script>
         <script type="text/javascript" src="js/bevegged.js"></script>
     </head>
     <body style="background-color: #000">
-        <div id="be_vegged">
-            <div id="newInfoArea">
-                <div id="infoParent">
-                    <div id="infoHeader"></div>
-                    <div id="infoStart">
-                        <div id="start">
-                            <div>
-                                <span>START</span>
+        <table id="be_vegged">
+            <tr>
+                <td id="infoArea">
+                    <div id="newInfoArea">
+                        <div id="infoParent">
+                            <div id="infoHeader"></div>
+                            <div id="infoStart">
+                                <div id="start">
+                                    <div>
+                                        <span>START</span>
+                                    </div>
+                                </div>
                             </div>
+                            <div id="infoHints">
+                                <div id="hints">
+                                    <span>Hints Remaining:</span>
+                                    <div id="hintId"></div>
+                                </div>
+                            </div>
+                            <div id="infoLevelDat" class="datContainer">
+                                <div id="levelId" class="centern"><span>Level:</span><span id="levelNow"></span></div>
+                                <div id="pointsId" class="centern">
+                                    <span>Points:</span><span id="pointsNow"></span>
+                                </div>
+                            </div>
+                            <div id="infoStats" class="datContainer">
+                                <div class="stat"><span>Captured:</span><span id="tiles"></span></div>
+                                <div class="stat"><span>Required:</span><span id="ntiles"></span></div>
+                            </div>
+                            <div id="infoTime">
+                                <div id="info">Stress Bar</div>
+                                <div id="timebar"><span style="display: none" id="t"></span></div>
+                            </div>
+                            <div id="infoFooter"></div>
                         </div>
                     </div>
-                    <div id="infoHints">
-                        <div id="hints">
-                            <span>Hints Remaining:</span>
-                            <div id="hintId"></div>
-                        </div>
-                    </div>
-                    <div id="infoLevelDat" class="datContainer">
-                        <div id="levelId" class="centern"><span>Level:</span><span id="levelNow"></span></div>
-                        <div id="pointsId" class="centern"><span>Points:</span><span id="pointsNow"></span></div>
-                    </div>
-                    <div id="infoStats" class="datContainer">
-                        <div class="stat"><span>Captured:</span><span id="tiles"></span></div>
-                        <div class="stat"><span>Required:</span><span id="ntiles"></span></div>
-                    </div>
-                    <div id="infoTime">
-                        <div id="info">Stress Bar</div>
-                        <div id="timebar"><span style="display: none" id="t"></span></div>
-                    </div>
-                    <div id="infoFooter"></div>
-                </div>
-            </div>
-            <div id="gameArea" style="width: 512px; height: 512px">
-                <div style="position: relative; width: 100%; height: 100%">
-                    <div id="field"></div>
-                </div>
-            </div>
-        </div>
+                </td>
+                <td id="gameArea" style="width: 512px; height: 512px">
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="position: relative; width: 100%; height: 100%">
+                                    <div id="field"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
