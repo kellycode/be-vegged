@@ -14,6 +14,7 @@ var vegger = new Class({
         tileheight: 64,
 
         fieldid: "field",
+        pausedfieldid: "pausedField",
         pointsid: "pointsId",
         timeid: "t",
         timebar: "timebar",
@@ -42,6 +43,9 @@ var vegger = new Class({
         hintcount: 0,
         starthints: 6,
         periodical: false,
+
+        gameIsRunning: false,
+        gameIsPaused: false,
 
         gameover: "GAME OVER",
         nohintsleft: '<span style="color:red;" class="startHintsText">Click Start To Begin</span>',
@@ -126,7 +130,7 @@ var vegger = new Class({
         let infoArea = document.getElementById("infoArea");
         let newInfoArea = document.getElementById("newInfoArea");
         newInfoArea.style.height = infoArea.style.height = gameHeightWidth + "px";
-        newInfoArea.style.width = infoArea.style.width = (gameHeightWidth * 0.33) + "px";
+        newInfoArea.style.width = infoArea.style.width = gameHeightWidth * 0.33 + "px";
 
         let tileWidthHeight = gameHeightWidth / 8;
 
@@ -148,10 +152,31 @@ var vegger = new Class({
             }
         }.bind(this);
 
-        this.clearGame();
+        this.gamePausedField = document.getElementById("pausedField");
+
+        // add a starter field
+        this.setupfield();
+        this.firstfill();
+    },
+
+    pauseGame: function () {
+        if (!this.options.gameIsPaused) {
+            this.options.gameIsPaused = true;
+            this.gamePausedField.show();
+            $(this.options.startid).innerHTML = "<span>Start</span>";
+        } else {
+            this.options.gameIsPaused = false;
+            this.gamePausedField.hide();
+            $(this.options.startid).innerHTML = "<span>Pause</span>";
+        }
     },
 
     startgame: function () {
+        if (this.options.gameIsRunning) {
+            this.pauseGame();
+            return;
+        }
+
         this.options.hintcount = this.options.starthints;
         this.options.points = 0;
         this.options.level = 0;
@@ -160,6 +185,12 @@ var vegger = new Class({
 
         $(this.options.hintid).removeEvents();
         $(this.options.hintid).addEvent("click", this.giveHint.bind(this));
+
+        $(this.options.infoid).innerHTML = "Time Remaining";
+        $(this.options.startid).innerHTML = "<span>Pause</span>";
+
+        this.options.gameIsRunning = true;
+        this.gamePausedField.hide();
     },
 
     clearGame: function () {
@@ -176,6 +207,8 @@ var vegger = new Class({
         this.updatehint();
 
         $clear(this.timer);
+        // TODO timer runs before START is clicked
+        // I think doTimer is the main game loop
         this.timer = this.doTimer.delay(1000, this);
         $(this.options.infoid).innerHTML = "Time Remaining";
     },
@@ -985,10 +1018,12 @@ var vegger = new Class({
     },
 
     doTimer: function () {
-        this.options.time--;
-        this.updateTimeDisplay();
+        if (!this.options.gameIsPaused) {
+            this.options.time--;
+            this.updateTimeDisplay();
 
-        if (this.options.time <= 0) this.gameOver();
+            if (this.options.time <= 0) this.gameOver();
+        }
 
         this.timer = this.doTimer.delay(1000, this);
     },
