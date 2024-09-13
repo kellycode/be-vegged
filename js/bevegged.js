@@ -1044,7 +1044,10 @@ var vegger = new Class({
         this.levelpause = true;
         $clear(this.timer);
         $(this.options.infoid).innerHTML = this.options.levels[this.options.level].text;
-        this.chain(this.doNextLevel.delay(3000, this));
+        // TODO delay between levels seems too long with just a blank screen
+        // maybe show some animation like fireworks but changing this from 3000
+        // to 1000
+        this.chain(this.doNextLevel.delay(1000, this));
         for (var x = 0; x <= this.options.height - 1; x++) {
             for (var y = 0; y <= this.options.width - 1; y++) {
                 this.clearTile(x, y);
